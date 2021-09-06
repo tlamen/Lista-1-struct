@@ -1,0 +1,22 @@
+#Exercício 3: Imprimir os números de 1 a 100, substituindo por "fizz" caso sejam divisíveis por 3;
+#substituindo por "buzz" caso sejam divisíveis por 5;
+#substituindo por "fizzbuzz" caso sejam divisíveis por 15;
+
+#Eu não sei porque value não é atualizado como o último if, mas dessa forma o programa funciona como o planejado
+#Pretendo estudar melhor programas com múltiplos ifs depois
+for value in 1...100 do
+    if value % 15 == 0
+        value = "fizzbuzz"
+    end
+    if value % 3 == 0
+        value = "fizz"
+    end
+    if value % 5 == 0
+        value = "buzz"
+    end
+    print value
+    print ", "
+end
+
+#Essa última linha representa o valor de 100, e só está fora do for para que a última vírgula não seja printada e para que ocorra a quebra de linha
+puts "buzz" 

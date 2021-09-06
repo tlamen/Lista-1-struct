@@ -1,0 +1,35 @@
+#Exercício 2: Definir os zeros de uma equação do segundo grau (ax² + bx + c = 0) a partir dos valores de a, b e c
+
+#função (a, b e c como parâmetros):
+def equacao(a, b, c)
+    #Primeiro calculamos Delta = b² - 4ac
+    delta = b ** 2 - 4*a*c
+    #Retornamos false se não houver solução para o sistema (Delta menor que 0)
+    if delta < 0
+        return false
+    end
+    #Retornamos apenas uma solução se delta for igual a 0
+    if delta == 0
+        #x = -b / 2a
+        return (-1 * b) / (2 * a)
+    end
+    #Retornamos duas soluções se delta for maior que 0
+    solucao = []
+    raiz = delta ** 0.5
+    #x' = - b + (Raiz de Delta) / 2a
+    x_um = ((-1 * b) + raiz) / (2 * a)
+    solucao.append(x_um)
+    #x'' = - b + (Raiz de Delta) / 2a
+    x_dois = ((-1 * b) - raiz) / (2 * a)
+    solucao.append(x_dois)
+
+    return solucao
+end
+
+#Entrada:
+puts "Forneça os valores de a, b e c: <a b c>"
+a, b, c = gets.split.map{ |str| str.to_i }
+
+
+#Saída:
+p equacao(a, b, c)

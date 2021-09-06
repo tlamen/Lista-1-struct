@@ -1,0 +1,33 @@
+#Exercício 7: Separar os números primos de um array e imprimir um array com os quadrados desses números primos
+
+#Usarei a mesma função que construi no exercício 1 da lista:
+def eh_primo(numero)
+    divisores = 0 # Variável que armazena a quantidade de divisores
+    
+    for i in 1...numero + 1 do
+        if numero % i == 0
+            divisores += 1 # Aumenta em 1 a cada divisor
+        end
+    end
+
+    if divisores == 2
+        return true
+    else
+        return false
+    end
+end
+
+#Entrada:
+puts "Forneça os números do array <a b c...>"
+lista = gets
+array = lista.split.map(&:to_i)
+
+quadrados = []
+for numero in array do
+    if eh_primo(numero)
+        quadrados.append(numero ** 2)
+    end
+end
+
+#Saída
+p quadrados

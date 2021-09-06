@@ -1,0 +1,33 @@
+#Exercício 5: receber um array e imprimir uma série de informações em forma de hash
+
+#Entrada
+puts "Forneça os números do array <a b c...>"
+lista = gets
+array = lista.split.map(&:to_i)
+
+#saída
+#Variaveis auxiliares para a saída
+soma = 0 #Soma dos elementos
+for value in array do
+    soma += value
+end
+media = (soma.to_f / array.length) #media dos elementos
+#para cálculo da mediana, definimos se o tamanho do array é par ou impar:
+if array.length % 2 == 0 #Se for par, usamos a média dos dois valores intermediários
+    mediana = (array[(array.length.to_f / 2).to_i] + array[((array.length.to_f / 2) - 1).to_i]).to_f / 2
+else #Se for impar, usamos o valor intermediário
+    mediana = array[(array.length.to_f / 2).to_i]
+end
+
+#Saída:
+hash  = {
+    :primeiro => array.first,
+    :quantidade=> array.length, 
+    :ultimo=> array.last, 
+    :soma=> soma, 
+    :media=> media,
+    :mediana=>mediana, 
+    :ordenada=> array.sort
+}
+
+p hash

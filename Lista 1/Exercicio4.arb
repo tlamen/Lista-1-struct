@@ -1,0 +1,24 @@
+#Exercício 4: construir um triângulo com a largura desejada
+
+#Função que imprime o triângulo com dois loops (largura como parâmetro)
+def triangulo(largura)
+    #Primeiro loop - Imprime a primeira parte do triângulo + linha do meio
+    for i in 1...largura + 1 do
+        linha = "* " * i
+        puts linha
+    end
+
+    #Segundo loop - Imprime a parte de baixo do triângulo
+    i -= 1
+    until i == 0
+        linha = "* " * i
+        puts linha
+        i -= 1
+    end
+end
+#Entrada:
+puts "Escreva a altura desejada"
+largura = gets.to_i
+
+#Saída
+triangulo(largura)

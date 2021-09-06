@@ -1,0 +1,26 @@
+# Exercício 1: Definir se um número é primo ou não
+
+
+# Fução que define se um número é primo - se houver apenas 2 divisores - 
+def eh_primo(numero)
+    divisores = 0 # Variável que armazena a quantidade de divisores
+    
+    for i in 1...numero + 1 do
+        if numero % i == 0
+            divisores += 1 # Aumenta em 1 a cada divisor
+        end
+    end
+
+    if divisores == 2
+        return true
+    else
+        return false
+    end
+end
+
+#Entrada:
+puts "Forneça um número:"
+num = gets.to_i
+
+#Saída:
+puts eh_primo(num)

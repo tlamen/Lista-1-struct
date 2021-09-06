@@ -1,0 +1,15 @@
+#Exercício 6: Imprimir um array com refeições aleatórias de um cardápio na forma de hash
+
+
+cardapio = {
+    :entrada => ["Queijo coalho", "Pão com manteiga", "Burrata"],
+    :principal => ["Espaguete", "Feijoada", "Lasanha"],
+    :sobremesa => ["Sorvte", "Petit gateau", "Brigadeiro"]
+}
+
+#Para garantir um valor aleatório, usamos o método rand, garantindo um número entre 0 e 2
+refeicao = []
+refeicao.append(cardapio[:entrada][rand(3)])
+refeicao.append(cardapio[:principal][rand(3)])
+refeicao.append(cardapio[:sobremesa][rand(3)])
+p refeicao
